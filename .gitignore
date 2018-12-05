@@ -34,7 +34,6 @@ build/Release
 
 # Dependency directories
 example/node_modules/
-example/
 node_modules/
 jspm_packages/
 
