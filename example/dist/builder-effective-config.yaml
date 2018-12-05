@@ -1,0 +1,34 @@
+directories:
+  output: dist
+  buildResources: assets
+files:
+  - filter:
+      - build/**/*
+      - build/**/*
+      - node_modules/**/*
+      - '!build-scripts${/*}'
+extraMetadata:
+  main: build/electron.js
+appId: com.gala.photo
+forceCodeSigning: true
+compression: normal
+productName: Gala
+mac:
+  category: gala.category.photo
+  publish:
+    provider: github
+    owner: Gonzalo Santome
+  target:
+    - zip
+    - dmg
+win:
+  publisherName: Gonzalo Santome
+  certificateFile: ./build-scripts/win-cert.pfx
+  certificatePassword: <stripped sensitive data>
+  target:
+    - target: nsis
+      arch:
+        - x64
+        - ia32
+extends: react-cra
+electronVersion: 3.0.10
