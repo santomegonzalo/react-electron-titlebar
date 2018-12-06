@@ -1247,20 +1247,10 @@ function (_PureComponent) {
 }(PureComponent);
 
 Titlebar.defaultProps = {
-  draggable: true,
-  title: 'something',
-  transparent: false,
-  padding: 3
+  title: null
 };
 Titlebar.propTypes = {
-  draggable: propTypes.bool,
-  title: propTypes.string,
-  transparent: propTypes.bool,
-  padding: propTypes.number,
-  onClose: propTypes.func.isRequired,
-  onMinimize: propTypes.func.isRequired,
-  onMaximize: propTypes.func.isRequired,
-  onFullscreen: propTypes.func.isRequired
+  title: propTypes.string
 };
 
 export default Titlebar;
