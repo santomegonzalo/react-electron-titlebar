@@ -220,23 +220,11 @@ class Titlebar extends PureComponent {
 }
 
 Titlebar.defaultProps = {
-  draggable: true,
-  title: 'something',
-  transparent: false,
-  padding: 3,
+  title: null,
 };
 
 Titlebar.propTypes = {
-  draggable: PropTypes.bool,
   title: PropTypes.string,
-  transparent: PropTypes.bool,
-  padding: PropTypes.number,
-  onClose: PropTypes.func.isRequired,
-  onMinimize: PropTypes.func.isRequired,
-  onMaximize: PropTypes.func.isRequired,
-  onFullscreen: PropTypes.func.isRequired,
 };
 
-export {
-  Titlebar,
-};
+export default Titlebar;
