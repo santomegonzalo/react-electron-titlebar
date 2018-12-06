@@ -2,3 +2,12 @@
 example/
 node_modules/
 lib/
+
+index.js
+.babelrc
+.eslintrc
+.gitignore
+LICENSE
+README.md
+rollup.config.js
+yarn.lock
