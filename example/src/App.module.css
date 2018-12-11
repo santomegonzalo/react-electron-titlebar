@@ -1,0 +1,8 @@
+.App {
+  color: #FFF;
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 50px;
+  flex-direction: column;
+}
