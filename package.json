@@ -1,6 +1,6 @@
 {
   "name": "react-electron-titlebar",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Simple Titlebar for Windows or Mac using React",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -8,6 +8,17 @@
   "repository": "git@github.com:santomegonzalo/react-electron-titlebar.git",
   "author": "Gonzalo Santome",
   "license": "MIT",
+  "keywords": [
+		"electron",
+		"react",
+		"titlebar",
+		"title-bar",
+		"title bar",
+		"macOS",
+		"mac",
+		"windows",
+		"win"
+	],
   "scripts": {
     "build": "rollup -c"
   },
