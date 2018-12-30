@@ -36,7 +36,7 @@ import Titlebar from 'react-electron-titlebar';
 ...
 
 <div>
-  <Titlebar text="App Title" backgroundColor="#000000">
+  <Titlebar title="App Title" backgroundColor="#000000">
 </div>
 ```
 
