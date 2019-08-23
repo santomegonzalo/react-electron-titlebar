@@ -1,6 +1,6 @@
 {
   "name": "react-electron-titlebar",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Simple Titlebar for Windows or Mac using React",
   "main": "dist/index.js",
   "module": "dist/index.es.js",

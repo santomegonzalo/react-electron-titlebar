@@ -990,7 +990,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  height: ", ";\n  display: flex;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  user-select: none;\n  width: 100%;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif;\n  background-color: #000000;\n  color: #FFF;\n  -webkit-app-region: drag;\n  flex-direction: row;\n"]);
+  var data = _taggedTemplateLiteral(["\n  height: ", ";\n  display: flex;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  user-select: none;\n  width: 100%;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", Arial, sans-serif;\n  background-color: '", "';\n  color: #FFF;\n  -webkit-app-region: drag;\n  flex-direction: row;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1000,6 +1000,8 @@ function _templateObject() {
 }
 var Container = styled.div(_templateObject(), function (props) {
   return props.isWin ? '28px' : '24px';
+}, function (props) {
+  return props.backgroundColor;
 });
 var Text = styled.div(_templateObject2(), function (props) {
   return props.isWin ? 'flex-start' : 'center';
@@ -1121,8 +1123,8 @@ function (_PureComponent) {
       }
     }
   }, {
-    key: "componentWillUnMount",
-    value: function componentWillUnMount() {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
       if (!this.isWindows) {
         document.body.removeEventListener('keydown', this.handleKeyDown);
         document.body.removeEventListener('keyup', this.handleKeyUp);
@@ -1132,7 +1134,9 @@ function (_PureComponent) {
     key: "renderMac",
     value: function renderMac() {
       var keyAltDown = this.state.keyAltDown;
-      return React__default.createElement(Controls, null, React__default.createElement(ButtonMacClose, {
+      return React__default.createElement(Controls, {
+        key: "title-controls"
+      }, React__default.createElement(ButtonMacClose, {
         tabIndex: "-1",
         onClick: this.handleClose
       }, React__default.createElement("svg", {
@@ -1182,7 +1186,9 @@ function (_PureComponent) {
     key: "renderWindows",
     value: function renderWindows() {
       var isMaximized = this.state.isMaximized;
-      return React__default.createElement(Controls, null, React__default.createElement(ButtonWindows, {
+      return React__default.createElement(Controls, {
+        key: "title-controls"
+      }, React__default.createElement(ButtonWindows, {
         "aria-label": "minimize",
         tabIndex: "-1",
         onClick: this.handleMinimize
@@ -1227,23 +1233,28 @@ function (_PureComponent) {
   }, {
     key: "render",
     value: function render() {
-      var title = this.props.title;
+      var _this$props = this.props,
+          backgroundColor = _this$props.backgroundColor,
+          title = _this$props.title;
       var elements = [];
 
       if (this.isWindows) {
         elements.push(React__default.createElement(Text, {
+          key: "title-text",
           isWin: this.isWindows
         }, title));
         elements.push(this.renderWindows());
       } else {
         elements.push(this.renderMac());
         elements.push(React__default.createElement(Text, {
+          key: "title-text",
           isWin: this.isWindows
         }, title));
       }
 
       return React__default.createElement(Container, {
-        isWin: this.isWindows
+        isWin: this.isWindows,
+        backgroundColor: backgroundColor
       }, elements);
     }
   }]);
@@ -1252,10 +1263,12 @@ function (_PureComponent) {
 }(React.PureComponent);
 
 Titlebar.defaultProps = {
-  title: null
+  title: null,
+  backgroundColor: '#000000'
 };
 Titlebar.propTypes = {
-  title: propTypes.string
+  title: propTypes.string,
+  backgroundColor: propTypes.string
 };
 
 module.exports = Titlebar;
